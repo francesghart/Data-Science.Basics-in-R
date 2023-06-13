@@ -7,7 +7,7 @@ codes
 
 ## Use quotes to denote character vectors.
 
-countries <- c("Italy", "Canada", "Egypt")
+countries <- c("italy", "canada", "egypt")
 countries
 
 ## You can also name the entries of a vector.
@@ -43,5 +43,23 @@ seq(1,10,2)
 codes [2]
 codes [c(1,3)]
 codes [1:2]
-codes ["Canada"]
-codes [c("Italy", "Egypt")]
+codes ["canada"]
+codes [c("italy", "egypt")]
+
+## Vector coercion is an attempt by R to be flexible with data types. When an entry doesn't match what R expected, R tries to guess what the coder meant before throwing an error message.
+
+x <- c(1, "canada", 3)
+x
+class(x)
+
+## R also offers functions to force a specific coercion.
+
+x <- 1:5
+y <- as.character(x)
+y
+as.numeric(y)
+
+## NA is used for missing data. Missing data is a very common problem in real data sets.
+
+x <- c("1", "b", "3")
+as.numeric(x)
