@@ -1,4 +1,4 @@
-# Basic Data Wrangling
+## Basic Data Wrangling
 
 # "dplyr" is a package which provides intuitive functionality for working with tables.  
 install.packages("dplyr")
@@ -25,3 +25,15 @@ filter(murders,rate<= 0.71)
 new_table <-select(murders,state,region,rate)
 
 murders %>% select(state,region,rate) %>% filter(rate<=.071)
+
+
+## Creating Data Frames
+#A data frame is a data structure that organizes data into a 2-dimensional table of rows and columns, much like a spreadsheet.
+grades <- data.frame(names = c("John", "Juan", "Jean", "Yao"), 
+                     exam_1 = c(95, 80, 90, 85), 
+                     exam_2 = c(90, 85, 85, 90),
+                     stringsAsFactors = FALSE)
+grades
+
+# Be warned: framed data turns characters into factors. The argument "stringsAsFactors = FALSE" fixes this.
+class(grades$names)
